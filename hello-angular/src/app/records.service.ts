@@ -11,6 +11,11 @@ export class RecordsService {
   getinfo():string[] {
     return this.info;
   }
+  
+  addInfo(infoInput):string[]{
+    this.info.push(infoInput)
+    return this.info
+  }
 
   constructor() { }
 }

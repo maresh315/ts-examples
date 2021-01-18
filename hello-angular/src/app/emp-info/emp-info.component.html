@@ -1,4 +1,11 @@
-<button (click)='getInfoFromService()'>Employee</button>
+<form #frm='ngForm' (ngSubmit)='updateInfo(frm)'>
+	<div class="form-group">
+		<input type="text" name="location" class="form-control" ngModel>
+		<button type="submit" name="submit" class="form-control">Add Info</button>
+	</div>
+</form>
+<br>
+<button name="button" class="btn btn-primary" (click)='getInfoFromService()'>Employee</button>
 <ul class="list-group">
 	<li *ngFor= 'let info of infoReceived' class="list-group-item">{{info}}</li>
 </ul>

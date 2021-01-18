@@ -12,13 +12,16 @@ export class EmpInfoComponent implements OnInit {
   // Example Array [Name, id, email]
   infoReceived: string[] = []
 
+  
+  constructor(private recordService: RecordsService) { }
+  
+  ngOnInit(): void {
+  }
   getInfoFromService(){
     this.infoReceived = this.recordService.getinfo()
   }
 
-  constructor(private recordService: RecordsService) { }
-
-  ngOnInit(): void {
+  updateInfo(frm:any){
+    this.recordService.addInfo(frm.value.location)
   }
-
 }
