@@ -1,6 +1,7 @@
 import { interval, timer } from "rxjs";
 import { skipUntil } from 'rxjs/operators'
 
+// Show each item screen
 function addItem(value:number){
 	let element = document.createElement('li');
 	let innertext = document.createTextNode(`${value}`);

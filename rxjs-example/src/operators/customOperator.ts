@@ -10,3 +10,18 @@ function addItem(value:any){
 }
 
 const producer = interval(1000); // Some producing Observeable
+
+// can be exported
+const customOperator = () =>{
+	return (source: Observable<any>) =>{
+		return source.pipe(
+			// Some custom operation
+			map(sourceVal => sourceVal * 3),
+			map(sourceVal => sourceVal - 1)
+		);
+	};
+};
+
+producer.pipe(
+	customOperator()
+).subscribe(data=>addItem(data))
