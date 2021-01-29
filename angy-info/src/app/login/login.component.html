@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+	<div class="card col-6 shadow">
+		<article class="card-body">
+			<h4 class="card-title text-center mb-4">Login</h4>
+			<hr>
+
+			<app-message></app-message>
+			
+			<form #loginForm='ngForm'>
+			<div class="form-group mb-3">
+				<div class="input-group">
+					<div class="input-group-prepend">
+							<span class="input-group-text usernameLabel"></span>
+					</div>
+					<input type="text" name="username" class="form-control" placeholder="Username" [(ngModel)]="username" required>
+				</div>
+			</div>
+
+			<div class="form-group  mb-5">
+				<div class="input-group">
+					<div class="input-group-prepend">
+							<span class="input-group-text passwordLabel"></span>
+					</div>
+						<input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required>
+				</div>
+			</div> 
+
+			<div class="form-group row">
+				<div class="col">
+					<button type="submit" class="btn btn-primary btn-block" name="submit" (click)="loginUser(loginForm)">Login</button>
+				</div>
+				<div class="col">
+					<button type="reset" class="btn btn-secondary btn-block" name="reset">Reset</button>
+				</div>
+			</div>
+			</form>
+		</article>
+	</div>
+</div>

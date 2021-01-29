@@ -1,0 +1,49 @@
+<!-- <div *ngIf="userProfile">
+
+  <h2>Profile Details</h2>
+  <form onsubmit="event.preventDefault()">
+    <div class="form-group">
+			<label for="usernameUpdate" id="usernameUpdateLabel">Username </label>
+      <input type="text" name="usernameUpdate" 
+      id="usernameUpdate" [(ngModel)]="usernameUpdate" 
+      placeholder="Update Username" required>
+		</div>
+
+    <button (click)='onSave(userProfile)'>Save</button>
+  </form>
+
+</div> -->
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Username Update</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <app-message class="mb-2"></app-message>
+      <div class="modal-body">
+        <form>
+          <div class="form-group mb-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text usernameLabel"></span>
+              </div>
+              <input type="text" name="username" class="form-control" [placeholder]="userProfile?.getUsername()" [(ngModel)]="usernameUpdate" required>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="col">
+          <button type="submit" class="btn btn-primary btn-block" name="submit" (click)='onSave(userProfile)'>Save</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+
+<!-- <div>
+	<form onsubmit="event.preventDefault()" #registerForm='ngForm'>
+		<div class="form-group">
+			<label for="username" id="usernameLabel">Username</label>
+			<input type="text" name="username" id="username" [(ngModel)]="username" required>
+		</div>
+
+		<div class="form-group">
+			<label for="password" id="passwordLabel">Password</label>
+			<input type="password" name="password" id="password" [(ngModel)]="password" required>
+		</div>
+
+		<div class="form-group">
+			<label for="role" id="roleLabel">Role</label>
+			<select name="role" id="role" [(ngModel)]="role">
+					<option *ngFor='let option of options' [value]="">{{option}}</option>
+			</select>
+		</div>
+		
+		<div class="form-group">
+			<input type="submit" name="submit" (click)="registerUser(registerForm)">
+			<input type="reset" name="reset">
+		</div>
+	</form>
+</div> -->
+
+<div class="row justify-content-center">
+	<div class="card col-6 shadow">
+		<article class="card-body">
+			<h4 class="card-title text-center mb-4">Register</h4>
+			<hr>
+
+			<!-- <div *ngIf="" class="mb-4 pb-3"></div> -->
+			<app-message></app-message>
+			
+			<form #registerForm='ngForm'>
+			<div class="form-group mb-3">
+				<div class="input-group">
+					<div class="input-group-prepend">
+							<span class="input-group-text usernameLabel"></span>
+					</div>
+					<input type="text" name="username" class="form-control" placeholder="Username" [(ngModel)]="username" required>
+				</div>
+			</div>
+
+			<div class="form-group  mb-3">
+				<div class="input-group">
+					<div class="input-group-prepend">
+							<span class="input-group-text passwordLabel"></span>
+					</div>
+						<input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required>
+				</div>
+			</div> 
+
+			<div class="form-group mb-5">
+				<div class="input-group">
+					<select class="input-group-text btn-block" name="role" id="role" [(ngModel)]="role">
+						<option *ngFor='let option of options' [value]="">{{option}}</option>
+				</select>
+				</div>
+			</div> 
+
+			<div class="form-group row">
+				<div class="col">
+					<button type="submit" class="btn btn-primary btn-block" name="submit" (click)="registerUser(registerForm)">Register</button>
+				</div>
+				<div class="col">
+					<button type="reset" class="btn btn-secondary btn-block" name="reset">Reset</button>
+				</div>
+			</div>
+			</form>
+		</article>
+	</div>
+</div>
